@@ -1,4 +1,4 @@
-#+TITLE: pyFastfusion v__VERSION__
+#+TITLE: pyFastfusion Manual v__VERSION__
 #+AUTHOR:
 #+LANGUAGE: en
 
