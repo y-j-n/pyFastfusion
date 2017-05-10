@@ -1,0 +1,42 @@
+* workaround for compile break with warnings
+make ALLOW_WARNINGS=1
+
+* workaround for error on ThirdParty/GL/glh/glh_linear.h
+https://gist.github.com/NikolausDemmel/7901983
+
+cp ThirdParty/GL/glh/glh_linear{,--orig}.h
+vi ThirdParty/GL/glh/glh_linear.h
+(quiery-replace equivalent glh_equiv)
+
+* run test (this fails with 'no devices found'.  see the section below for fix)
+cd ./Bin/x64-Release/
+./NiViewer
+
+* LINUX-only!!  Unlike osx, needed to install Sensor-master and OpenNI-master
+  as well to get NiViewer of OpenNI2 working...
+  c.f. http://guitarpenguin.is-programmer.com/posts/38784.html
+       http://stackoverflow.com/questions/19938830/openni2-and-asus-xtion-pro-live-device-not-found/24627463#24627463
+  Tested on ubuntu 12.04 precise on supermicr
+** install packages
+sudo apt-get install libudev-dev
+sudo apt-get install openjdk-6-jdk
+make ALLOW_WARNINGS=1
+** install OpenNI-master: required to compile Sensor-master 
+unzip OpenNI-master.zip
+cd OpenNI-master/Platform/Linux/CreateRedist/
+./RedistMaker
+cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
+./install.sh
+** install Sensor-master
+unzip Sensor-master.zip
+cd Sensor-master/Platform/Linux/CreateRedist/
+./RedistMaker
+cd ../Redist/Sensor-Bin-Linux-x64-v5.1.6.6/
+./install.sh
+** test NiViewer of OpenNI2
+cd OpenNI2-master-2.2.0.33/Bin/x64-Release/
+./NiViewer
+
+
+
+

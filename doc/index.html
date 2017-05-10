@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>pyFastfusion v2.1</title>
+<!-- 2017-05-10 Wed 23:35 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<a href="https://github.com/y-j-n/pyFastfusion" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">pyFastfusion v2.1</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Abstract</a></li>
+<li><a href="#sec-2">2. Prerequisites</a></li>
+<li><a href="#sec-3">3. Installation</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Building and installing dependent libraries locally</a>
+<ul>
+<li><a href="#sec-3-1-1">3.1.1. Python packages</a></li>
+<li><a href="#sec-3-1-2">3.1.2. PCL-1.8</a></li>
+<li><a href="#sec-3-1-3">3.1.3. Python-PCL wrapper</a></li>
+<li><a href="#sec-3-1-4">3.1.4. PCL-SAC library</a></li>
+<li><a href="#sec-3-1-5">3.1.5. FastFusion library</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">3.2. Testing installation</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Interfaces</a></li>
+<li><a href="#sec-5">5. Basic Operations</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Loading a mesh-based model</a>
+<ul>
+<li><a href="#sec-5-1-1">5.1.1. Pre-installed models</a></li>
+<li><a href="#sec-5-1-2">5.1.2. Structure of model data</a></li>
+<li><a href="#sec-5-1-3">5.1.3. Loading a model using a dialog window</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-2">5.2. Moving the camera along the recorded trajectory</a></li>
+<li><a href="#sec-5-3">5.3. Moving the camera off the recorded trajectory</a></li>
+<li><a href="#sec-5-4">5.4. Measuring Euclidean distances</a></li>
+<li><a href="#sec-5-5">5.5. Generating point clouds by snapping the mesh model</a>
+<ul>
+<li><a href="#sec-5-5-1">5.5.1. Snapping by the camera</a></li>
+<li><a href="#sec-5-5-2">5.5.2. Snaps Window</a></li>
+<li><a href="#sec-5-5-3">5.5.3. PCL Viewer</a></li>
+<li><a href="#sec-5-5-4">5.5.4. Planes/Objects Window</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-6">5.6. Applying planar segmentation against the entire mesh model</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Advanced Operations</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Recording a new RGB-D dataset</a>
+<ul>
+<li><a href="#sec-6-1-1">6.1.1. Building dependent libraries</a></li>
+<li><a href="#sec-6-1-2">6.1.2. Recording using an RGB-D camera</a></li>
+<li><a href="#sec-6-1-3">6.1.3. Estimating the camera trajectory with DVO-SLAM</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-2">6.2. Reconstructing a mesh-based model by FastFusion</a>
+<ul>
+<li><a href="#sec-6-2-1">6.2.1. Setting the RGB-D data source</a></li>
+<li><a href="#sec-6-2-2">6.2.2. Reconstruction</a></li>
+<li><a href="#sec-6-2-3">6.2.3. Saving and clearing the reconstructed model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Abstract</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This software provides a full scene processing pipeline for volumetric
+reconstruction and plane-based prototyping of 3D scenes using an RGB-D
+sensor.  The DVO-SLAM module first estimates the camera trajectory, then the
+FastFusion module performs volumetric reconstruction of the scene.  For scene
+analysis, the plane estimation module finds planar models supported by point
+clouds corresponding to several dominant planar objects that characterize the
+environment.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Prerequisites</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+This software assumes the following run time environment:
+</p>
+<ul class="org-ul">
+<li>Hardware: 4GB RAM, 1GB Video RAM.
+</li>
+<li>Operating system：64-bit Ubuntu Linux 12.04 or later.
+</li>
+<li>Interpreter：Python 2.7.x
+</li>
+<li>OpenCV 2.4.x or 3.x installed in the system.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Installation</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Building and installing dependent libraries locally</h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> Python packages</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+Install Python-related packages as follows:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">sudo apt-get install python-pip
+sudo pip install pyqtgraph cython libeigen3-dev libflann-dev
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2"><span class="section-number-4">3.1.2</span> PCL-1.8</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+Install the Point Cloud Library as follows.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-3-1-2-1" name="sec-3-1-2-1"></a>Compilation<br  /><div class="outline-text-5" id="text-3-1-2-1">
+<div class="org-src-container">
+
+<pre class="src src-bash">unzip pcl-master.zip
+cd pcl-master
+mkdir build
+cd build
+cmake ..
+vi CMakeCache.txt  # edit as: CMAKE_INSTALL_PREFIX:PATH=./local
+make -j4
+make install
+</pre>
+</div>
+</div>
+</li>
+<li><a id="sec-3-1-2-2" name="sec-3-1-2-2"></a>Checking output<br  /><div class="outline-text-5" id="text-3-1-2-2">
+<p>
+Make sure the existence of locally installed binary files:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">ls ./local/{lib,bin}
+</pre>
+</div>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3"><span class="section-number-4">3.1.3</span> Python-PCL wrapper</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+Install the Python-PCL wrapper library as follows.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-3-1-3-1" name="sec-3-1-3-1"></a>Compilation<br  /><div class="outline-text-5" id="text-3-1-3-1">
+<div class="org-src-container">
+
+<pre class="src src-bash">cd python-pcl-master/
+export PKG_CONFIG_PATH=../pcl-master/build/local/lib/pkgconfig
+make
+</pre>
+</div>
+</div>
+</li>
+<li><a id="sec-3-1-3-2" name="sec-3-1-3-2"></a>Checking output<br  /><div class="outline-text-5" id="text-3-1-3-2">
+<p>
+Make sure the test script works as follows:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../pcl-master/build/local/lib
+python segment_cyl_plane.py
+</pre>
+</div>
+
+<p>
+Expected output:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">23760
+23760
+[-0.43493905663490295, -0.5133732557296753, 0.7397810220718384, -0.47040078043937683]
+[0.05424264818429947, 0.08664929121732712, 0.7785331606864929, -0.021071095019578934, 0.8386908769607544, 0.5442001223564148, 0.038754820823669434]
+</pre>
+</div>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-3-1-4" class="outline-4">
+<h4 id="sec-3-1-4"><span class="section-number-4">3.1.4</span> PCL-SAC library</h4>
+<div class="outline-text-4" id="text-3-1-4">
+<p>
+Install the PCL-based Sample and Consensus library as follows.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-3-1-4-1" name="sec-3-1-4-1"></a>Compilation<br  /><div class="outline-text-5" id="text-3-1-4-1">
+<div class="org-src-container">
+
+<pre class="src src-bash">cd pcl-sac
+mkdir build
+cd build
+cmake ..
+</pre>
+</div>
+</div>
+</li>
+<li><a id="sec-3-1-4-2" name="sec-3-1-4-2"></a>Checking output<br  /><div class="outline-text-5" id="text-3-1-4-2">
+<p>
+Make sure the following shared object exists:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">ls -l libpcl_ctypes.so
+</pre>
+</div>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-3-1-5" class="outline-4">
+<h4 id="sec-3-1-5"><span class="section-number-4">3.1.5</span> FastFusion library</h4>
+<div class="outline-text-4" id="text-3-1-5">
+<p>
+Install the FastFusion library modified for use in the AR software.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-3-1-5-1" name="sec-3-1-5-1"></a>Compilation<br  /><div class="outline-text-5" id="text-3-1-5-1">
+<div class="org-src-container">
+
+<pre class="src src-bash">cd fastfusion-master
+cmake .
+make
+</pre>
+</div>
+</div>
+</li>
+<li><a id="sec-3-1-5-2" name="sec-3-1-5-2"></a>Checking output<br  /><div class="outline-text-5" id="text-3-1-5-2">
+<p>
+Make sure the generated shared object files exist:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">ls ./lib
+libauxiliary.so    libgeometryfusion_aos.so         libonlinefusionctypes.so
+libcamerautils.so  libgeometryfusion_mipmap_cpu.so
+</pre>
+</div>
+</div>
+</li></ol>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Testing installation</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+After installing all the dependent libraries, you will be able to launch the
+AR software as follows:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">cd modeler
+./main.py
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="./figs/bare.png" alt="bare.png" width="100%" />
+</p>
+<p><span class="figure-number">Figure 1:</span> Launching the AR software.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Interfaces</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The main interface window contains the following GUI components:
+</p>
+
+<div class="figure">
+<p><img src="./figs/if.s.png" alt="if.s.png" width="100%" />
+</p>
+<p><span class="figure-number">Figure 2:</span> The main interface window.</p>
+</div>
+
+<ul class="org-ul">
+<li>World View &#x2013; In this view component, the camera (a rectangle filled in
+black), its trajectory (transparent rectangles), polygons in the scene, and
+the world coordinate axes are displayed.  The view angle is always pointing
+toward the origin.  The view can be interactively controlled as:
+<ul class="org-ul">
+<li>Mouse drag &#x2013; Change the view point.
+</li>
+<li>Mouse wheel &#x2013; Change the view scale.
+</li>
+</ul>
+</li>
+<li>World Control &#x2013; Apply operations related to 3D world models.
+<ul class="org-ul">
+<li>"Load Dataset" button &#x2013; Select a directory containing RGB-D data and/or a 3D model.
+</li>
+<li>"Build Model" button &#x2013; Build a 3D model using the RGB-D data in dataset directory.
+</li>
+<li>"Save Model" button &#x2013; Save the 3D model rendered in World View into a selected directory.
+</li>
+<li>"Clear Model" button &#x2013; Clear the 3D model rendered in World View.
+</li>
+</ul>
+</li>
+<li>Trajectory Control &#x2013; Select a camera along the trajectory:
+<ul class="org-ul">
+<li>"|&lt;" button &#x2013; Select the first camera pose in trajectory.
+</li>
+<li>"&lt;" button &#x2013; Select a previous camera pose in trajectory.
+</li>
+<li>"&gt;" button &#x2013; Select a next camera pose in trajectory.
+</li>
+<li>"&gt;|" button &#x2013; Select the last camera pose in trajectory.
+</li>
+<li>"ShowTraj" button &#x2013; Toggle the visibility of the trajectory and axes.
+</li>
+</ul>
+</li>
+<li>Trajectory Info &#x2013; Display the index and time stamp of the selected camera in
+trajectory.
+</li>
+<li>Camera View &#x2013; In this view component, the rendered scene by the current
+camera (filled in black) is displayed.  The view and be interactively
+controlled as:
+<ul class="org-ul">
+<li>Mouse-left drag up &#x2013; Increase camera pitch.
+</li>
+<li>Mouse-left drag down &#x2013; Decrease camera pitch.
+</li>
+<li>Mouse-left drag right &#x2013; Increase camera yaw.
+</li>
+<li>Mouse-left drag left &#x2013; Decrease camera yaw.
+</li>
+<li>Mouse wheel &#x2013; Translate the camera forward/backward.
+</li>
+<li>Mouse-middle drag up &#x2013; Translate the camera upward.
+</li>
+<li>Mouse-middle drag down &#x2013; Translate the camera downward.
+</li>
+<li>Mouse-middle drag right &#x2013; Translate the camera rightward.
+</li>
+<li>Mouse-middle drag left &#x2013; Translate the camera leftward.
+</li>
+<li>Mouse-right click &#x2013; Pick a 3D point on a polygon.
+</li>
+</ul>
+</li>
+<li>Camera Control &#x2013; Apply various operations to the currently selected camera:
+<ul class="org-ul">
+<li>"ResetPose" button &#x2013; Reset the camera pose to the original pose in trajectory.
+</li>
+<li>"SnapClear" button &#x2013; Clear the point cloud generated.
+</li>
+<li>"WireFrame" button &#x2013; Toggle the rendering mode for polygons (filled or mesh).
+</li>
+<li>"ProcEntireMesh" button &#x2013; Apply RANSAC-based planar surface extraction
+using all polygons in the scene.
+</li>
+<li>"SnapMesh" button &#x2013; Generate a point cloud based on the polygons rendered
+in the view.
+</li>
+</ul>
+</li>
+<li>Plane Estimation Control &#x2013; Adjust the parameters used in RANSAC-based planar
+surface extraction:
+<ul class="org-ul">
+<li>"leafLen" value &#x2013; The grid size used for downsizing the point cloud
+obtained from a mesh model.
+</li>
+<li>"sacDistThresh" value &#x2013; The deviation threshold of the vertical distance
+between a point and a hypothesized plane in RANSAC.
+</li>
+<li>"fpercentLeftSkip" value &#x2013; The stopping criteria when to terminate the
+iteration of extracting new planes from a point cloud.  Points belonging to
+an extracted plane are excluded from the point cloud.  Hence the number of
+points in the point cloud decreases.  The planar extraction algorithm
+stops when the number of points left is less than fpercentLeftSkip * N,
+where N is the initial number of points of the point cloud.
+</li>
+</ul>
+</li>
+<li>Camera Info &#x2013; Displays the deviation of the current camera from its pose in
+trajectory.  The format is (x [m], y [m], z[m], pitch [deg], roll [deg], yaw [deg]).
+</li>
+<li>Measurement Info &#x2013; Displays two 3D points picked up by mouse-right clicks.
+The Euclidean distance of the two points is also shown in meters.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Basic Operations</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Loading a mesh-based model</h3>
+<div class="outline-text-3" id="text-5-1">
+</div><div id="outline-container-sec-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1"><span class="section-number-4">5.1.1</span> Pre-installed models</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+There are three pre-installed mesh-models:
+</p>
+<ul class="org-ul">
+<li>"ruler50cm" &#x2013; Corresponding dataset stored under path of worlds/world-ruler-50cm
+</li>
+<li>"desk" &#x2013; Corresponding dataset stored under path of worlds/world-freiburg-gt-count80
+</li>
+<li>"plant" &#x2013; Corresponding dataset stored under path of worlds/world-e6p-full400
+</li>
+<li>"office" &#x2013; Corresponding dataset stored under path of worlds/cubi10-slowly-OK
+</li>
+</ul>
+<p>
+To load one of them, follow Menu &gt; World and click its title.  After
+loading, World View and Camera View are updated based on the load scene.
+</p>
+
+
+<div class="figure">
+<p><img src="./figs/load.png" alt="load.png" />
+</p>
+<p><span class="figure-number">Figure 3:</span> Loading the "plant" model.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5-1-2" class="outline-4">
+<h4 id="sec-5-1-2"><span class="section-number-4">5.1.2</span> Structure of model data</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+Internally, a model data directory contains the following files that define
+a model:
+</p>
+<ul class="org-ul">
+<li>npa_vbo_vertex.npy &#x2013; OpenGL VBO vertex data of a mesh-model.
+</li>
+<li>npa_vbo_index.npy &#x2013; OpenGL VBO index data of a mesh-model.
+</li>
+<li>list_traj_cam_fusion.npy &#x2013; Translation data of the camera trajectory.
+</li>
+<li>list_rot_cam_fusion.npy &#x2013; Rotation data of the camera trajectory.
+</li>
+<li>list_stamp_cam_fusion.npy &#x2013; Time stamps of the camera trajectory.
+</li>
+</ul>
+<p>
+For manually creating a new model dataset, refer to the Advance Operations
+section.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-1-3" class="outline-4">
+<h4 id="sec-5-1-3"><span class="section-number-4">5.1.3</span> Loading a model using a dialog window</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<p>
+Press "Load Dataset" button to launch a directory selection dialog.  Select
+a directory containing model data files (*.npy) explained in the previous
+section.  After loading, World View and Camera View are updated
+accordingly.
+</p>
+
+<div class="figure">
+<p><img src="./figs/load-dialog.s.png" alt="load-dialog.s.png" />
+</p>
+<p><span class="figure-number">Figure 4:</span> Loading a model using a dialog.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Moving the camera along the recorded trajectory</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+To move a camera along the trajectory, click the buttons in Trajectory
+Control.  World View and Trajectory Info are updated according to selected
+camera poses on the trajectory.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Moving the camera off the recorded trajectory</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+To move the camera to positions not on the trajectory, interact with Camera
+View with a mouse.  Supported operations for controlling the camera are
+explained in the Interfaces section.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Measuring Euclidean distances</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+To measure the Euclidean distance between two 3D points on polygons,
+right-click two different pixels in Camera View.  Each clicked pixel is
+instantly converted into a 3D coordinate on the rendered mesh model.  In
+Measurement Info, two 3D coordinates and their corresponding distance is
+displayed.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Generating point clouds by snapping the mesh model</h3>
+<div class="outline-text-3" id="text-5-5">
+</div><div id="outline-container-sec-5-5-1" class="outline-4">
+<h4 id="sec-5-5-1"><span class="section-number-4">5.5.1</span> Snapping by the camera</h4>
+<div class="outline-text-4" id="text-5-5-1">
+<p>
+To snap meshes observed by the camera, navigate the camera using the Camera
+View control interface and press the "SnapMesh" button.  Thereafter,
+related interface components (Snaps Window, PCL Viewer, Planes Window, and
+Objects Window) are updated as explained in the following sections.
+</p>
+
+<div class="figure">
+<p><img src="./figs/snapbutton.s.png" alt="snapbutton.s.png" width="60%" />
+</p>
+<p><span class="figure-number">Figure 5:</span> Snapping polygon surfaces seen in the camera view.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-5-2" class="outline-4">
+<h4 id="sec-5-5-2"><span class="section-number-4">5.5.2</span> Snaps Window</h4>
+<div class="outline-text-4" id="text-5-5-2">
+<p>
+In Snap Window, a point cloud with dense 3D points on the polygon surfaces
+is plotted.  For inspection, translation/rotation and zoom-in/out
+operations are supported.
+</p>
+
+<div class="figure">
+<p><img src="./figs/snapwin.png" alt="snapwin.png" width="60%" />
+</p>
+<p><span class="figure-number">Figure 6:</span> Snapping polygon surfaces seen in the camera view.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-5-3" class="outline-4">
+<h4 id="sec-5-5-3"><span class="section-number-4">5.5.3</span> PCL Viewer</h4>
+<div class="outline-text-4" id="text-5-5-3">
+<p>
+The dense point cloud in Snap Window is downsized according to the grid
+length of the "leafLen" parameter.  The downsized point cloud is then
+segmented by a SAC-based planar model extraction algorithm and each planar
+segment found is presented in a different color.
+</p>
+
+<div class="figure">
+<p><img src="./figs/pclviewer.png" alt="pclviewer.png" width="60%" />
+</p>
+<p><span class="figure-number">Figure 7:</span> Point clouds generated by PCL.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-5-4" class="outline-4">
+<h4 id="sec-5-5-4"><span class="section-number-4">5.5.4</span> Planes/Objects Window</h4>
+<div class="outline-text-4" id="text-5-5-4">
+<p>
+In Planes Window, extracted planar models are displayed.  Using right-mouse
+clicks, you can iterate the currently selected plane.  In Objects Window,
+polygons corresponding to the selected plane are displayed.  For example,
+the following figure shows a planar model and its neighboring polygons
+belonging to a desktop surface.
+</p>
+
+<div class="figure">
+<p><img src="./figs/planeobjwin.png" alt="planeobjwin.png" width="100%" />
+</p>
+<p><span class="figure-number">Figure 8:</span> Estimated planar models and corresponding polygons.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-6" class="outline-3">
+<h3 id="sec-5-6"><span class="section-number-3">5.6</span> Applying planar segmentation against the entire mesh model</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+In the previous section, we performed planar model segmentation using only
+3D points visible in the camera.  On the other hand, it is possible to
+apply the same algorithm against the entire mesh model in the scene by
+pressing the "ProcEntireMesh" button.
+</p>
+
+<div class="figure">
+<p><img src="./figs/buttons.s.png" alt="buttons.s.png" width="60%" />
+</p>
+<p><span class="figure-number">Figure 9:</span> The "ProcEntireMesh" button.</p>
+</div>
+
+<p>
+The estimated planar models are based on a downsized point cloud that
+represents all polygon surfaces in the scene.
+</p>
+
+<div class="figure">
+<p><img src="./figs/entire.png" alt="entire.png" width="100%" />
+</p>
+<p><span class="figure-number">Figure 10:</span> Detected planar models based on all 3D points in the scene.  The selected plane corresponds to the ground floor.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Advanced Operations</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Recording a new RGB-D dataset</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+In this section, we explain how to 1) record original RGB-D sequences using an
+OpneNI-compatible sensor and 2) obtain the estimated trajectory with the
+DVO-SLAM algorithm.
+</p>
+</div>
+<div id="outline-container-sec-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> Building dependent libraries</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<p>
+To record RGB-D sequences with OpenNI compatible sensors (e.g.  Apple
+Primesense Carmine 1.09), we install OpenNI2, OpenNI, and Sensor libraries.
+Although OpenNI2 is mainly used for driving the sensors, the Sensor library
+(and its dependent OpenNI library) is also required for Primesense devices.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-6-1-1-1" name="sec-6-1-1-1"></a>OpenNI2<br  /><div class="outline-text-5" id="text-6-1-1-1">
+<p>
+We locally install this library to drive RGB-D sensors.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">sudo apt-get install libudev-dev openjdk-6-jdk
+cd OpenNI2-master-2.2.0.33/
+ALLOW_WARNINGS=1
+make
+</pre>
+</div>
+</div>
+</li>
+<li><a id="sec-6-1-1-2" name="sec-6-1-1-2"></a>OpenNI-master<br  /><div class="outline-text-5" id="text-6-1-1-2">
+<p>
+We globally install this library to compile Sensor-master.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">unzip OpenNI-master.zip
+cd OpenNI-master/Platform/Linux/CreateRedist/
+./RedistMaker
+cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
+sudo ./install.sh
+</pre>
+</div>
+</div>
+</li>
+<li><a id="sec-6-1-1-3" name="sec-6-1-1-3"></a>Sensor-master<br  /><div class="outline-text-5" id="text-6-1-1-3">
+<p>
+We globally install this library to support Primesense devices.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">unzip Sensor-master.zip
+cd Sensor-master/Platform/Linux/CreateRedist/
+./RedistMaker
+cd ../Redist/Sensor-Bin-Linux-x64-v5.1.6.6/
+sudo ./install.sh
+</pre>
+</div>
+</div>
+</li>
+<li><a id="sec-6-1-1-4" name="sec-6-1-1-4"></a>Tesing NiViewer of OpenNI2 with an RGB-D sensor<br  /><div class="outline-text-5" id="text-6-1-1-4">
+<div class="org-src-container">
+
+<pre class="src src-bash">cd OpenNI2-master-2.2.0.33/Bin/x64-Release/
+./NiViewer
+</pre>
+</div>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> Recording using an RGB-D camera</h4>
+<div class="outline-text-4" id="text-6-1-2">
+</div><ol class="org-ol"><li><a id="sec-6-1-2-1" name="sec-6-1-2-1"></a>Running recording scripts<br  /><div class="outline-text-5" id="text-6-1-2-1">
+<p>
+To record a new RGB-D sequence, connect an RGB-D sensor to a USB port, move
+to the OpenNI2's "Bin/x64-Release" directory, make symbolic links to
+support scripts, create a directory called "data-fastfusion-tum" that
+stores recorded data, and invoke the recording script as follows:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">cd OpenNI2-master-2.2.0.33/Bin/x64-Release
+ln -s ../../../recorder/associate.py .
+ln -s ../../../recorder/test_save_frames_dvo_slam.py .
+mkdir data-fastfusion-tum
+./test_save_frames_dvo_slam.py 100
+</pre>
+</div>
+<p>
+In the example above, we record 100 RGB-D frames (at 30fps) using the
+sensor.    
+</p>
+</div>
+</li>
+<li><a id="sec-6-1-2-2" name="sec-6-1-2-2"></a>Structure of the recorded data<br  /><div class="outline-text-5" id="text-6-1-2-2">
+<p>
+The recorded data resides in "data-fastfusion-tum/rgbd_dataset".
+In the newly created "rgbd_dataset" directory, the data is organized as
+follows:
+</p>
+<ul class="org-ul">
+<li>depth &#x2013; a directory containing depth images &lt;timestamp&gt;.png
+</li>
+<li>depth.txt &#x2013; a list of the names of depth image files
+</li>
+<li>rgb &#x2013; a directory containing RGB images &lt;timestamp&gt;.png
+</li>
+<li>rgb.txt &#x2013; a list of the names of RGB image files
+</li>
+<li>assoc.txt &#x2013; a list of the associations of depth and RGB images
+</li>
+</ul>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> Estimating the camera trajectory with DVO-SLAM</h4>
+<div class="outline-text-4" id="text-6-1-3">
+<p>
+We use DVO-SLAM to estimate the camera trajectory based on recorded the 
+RGB images and depth images.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-6-1-3-1" name="sec-6-1-3-1"></a>Building DVO-SLAM<br  /><div class="outline-text-5" id="text-6-1-3-1">
+<p>
+ROS Fuerte is required to build DVO-SLAM.  Set up ROS Fuerte as follows:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">sudo apt-get install ros-fuerte-desktop-full
+source /opt/ros/fuerte/setup.bash
+</pre>
+</div>
+<p>
+Using the build tools provided by ROS Fuerte, compile the dvo_core node
+and its dependencies as follows:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">cd dvo_slam
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`
+rosmake dvo_core dvo_ros dvo_slam dvo_benchmark
+</pre>
+</div>
+<p>
+In case of any compile errors, we refer the reader to the original build
+instructions of DVO-SLAM: <a href="https://github.com/tum-vision/dvo_slam/">https://github.com/tum-vision/dvo_slam/</a>
+</p>
+</div>
+</li>
+<li><a id="sec-6-1-3-2" name="sec-6-1-3-2"></a>Applying DVO-SLAM to the recorded RGB-D data<br  /><div class="outline-text-5" id="text-6-1-3-2">
+<div class="org-src-container">
+
+<pre class="src src-bash">./run_with_rgbd_dataset.sh
+</pre>
+</div>
+<p>
+By default, the script uses dataset found in the path of
+../OpenNI2-master-2.2.0.33/Bin/x64-Release/data-fastfusion-tum/rgbd_dataset To
+change it, you many want to modify DATA_FF and DATASET_DIR variables found in
+the script.  Before executing DVO-SLAM, the script shows bound parameters and
+waits for "Enter" to continue.  Press "Enter" to continue.
+</p>
+
+<p>
+Upon completion, DVO-SLAM generates the following output files inside the
+rgbd_dataset directory:
+</p>
+<ul class="org-ul">
+<li>assoc_opt_traj_final.txt &#x2013; the estimated 6DoF camera trajectory
+</li>
+<li>associate.txt &#x2013; a list of the associations of depth, RGB, and camera pose information
+</li>
+</ul>
+</div>
+</li></ol>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Reconstructing a mesh-based model by FastFusion</h3>
+<div class="outline-text-3" id="text-6-2">
+</div><div id="outline-container-sec-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> Setting the RGB-D data source</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<p>
+Press "Load Dataset" button in World Control to launch a directory
+selection dialog.  Select a directory containing RGB-D data (associate.txt
+and depth/rgb directories), where associate.txt is obtained by DVO-SLAM as
+explained in the previous section.  After selecting a proper directory
+containing RGB-D data, "Build Model" button become enabled.
+</p>
+
+<div class="figure">
+<p><img src="./figs/load-rgbd.s.png" alt="load-rgbd.s.png" />
+</p>
+<p><span class="figure-number">Figure 11:</span> Loading RGB-D data using a dialog.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2"><span class="section-number-4">6.2.2</span> Reconstruction</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<p>
+Press "Build Model" button to apply to build a new model based on the RGB-D
+data.  The new model is incrementally build and rendered live in World
+Window and Camera Window.  During model reconstruction, all model-related
+interfaces (Build/Save/Clear buttons) become disabled and enabled back
+again on completion.
+</p>
+
+<div class="figure">
+<p><img src="./figs/build.s.png" alt="build.s.png" />
+</p>
+<p><span class="figure-number">Figure 12:</span> Starting model reconstruction.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3"><span class="section-number-4">6.2.3</span> Saving and clearing the reconstructed model</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<p>
+Press "Save Model" button to save the current model as (*.npy) files.  The
+data is saved in a directory selected in a dialog.  Press "Clear Model" button
+to remove the current model rendered in World Window and Camera Window.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2017-05-10 Wed 23:35</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

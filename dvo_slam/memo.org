@@ -1,0 +1,22 @@
+
+* build success only on Fuerte
+!!!! use amd64 (x)ubuntu, or it won't compile with SSE/MMX related errors !!!!
+
+sudo apt-get install ros-fuerte-desktop-full
+source /opt/ros/fuerte/setup.bash
+
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/`whoami`/Projects/SLAM/dvo_slam
+
+rosmake dvo_core dvo_ros dvo_slam dvo_benchmark
+
+* prep data
+https://github.com/tum-vision/dvo_slam/issues/5
+
+cd ~/Projects/SLAM/data-fastfusion-tum/rgbd_dataset_freiburg3_long_office_household
+../../rgbd_benchmark_tools/src/rgbd_benchmark_tools/associate.py rgb.txt depth.txt > assoc.txt
+
+* run
+roscore
+rosrun rviz rviz
+roslaunch dvo_benchmark benchmark.launch dataset:=/home/`whoami`/Projects/SLAM/data-fastfusion-tum/rgbd_dataset_freiburg3_long_office_household   keep_alive:=true
+
